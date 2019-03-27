@@ -65,36 +65,74 @@ c = 1/((2 * math.pi)**(1/2)) # constant for p
 i = 0
 n = 0
 
+# Accept points if less than p and appends to list
 while n < 1000: # sample 1000 x points
     x_sample = (10*random.random() -5) # sample x point between -5 and 5 points
     y_sample = c * (random.random()) # sample y point between 0 and 1 points
     if y_sample <= c * math.exp((-1/2) * (x_sample**2)): # if y is less than p append to list
         n+=1
         x_list.append(x_sample)  # append each of these samples to list
-
+# plot histogram gaussian distribution 1,000 number array 10, 20, 50, 100
 plt.figure(9)
-plt.title('Rejection Method 10 bins')
+plt.title('Gaussian Distribution 1,000 samples (10 bins)')
 plt.hist(x_list, 10)
 plt.xlabel('x')
 plt.ylabel('P(x)')
 plt.show()
 
 plt.figure(10)
-plt.title('Rejection Method 20 bins')
+plt.title('Gaussian Distribution 1,000 samples (20 bins)')
 plt.hist(x_list, 20)
 plt.xlabel('x')
 plt.ylabel('P(x)')
 plt.show()
 
 plt.figure(11)
-plt.title('Rejection Method 50 bins')
+plt.title('Gaussian Distribution 1,000 samples (50 bins)')
 plt.hist(x_list, 50)
 plt.xlabel('x')
 plt.ylabel('P(x)')
 plt.show()
 
 plt.figure(12)
-plt.title('Rejection Method 100 bins')
+plt.title('Gaussian Distribution 1,000 samples (100 bins)')
+plt.hist(x_list, 100)
+plt.xlabel('x')
+plt.ylabel('P(x)')
+plt.show()
+
+# Accept points if less than p and appends to list
+while n < 1000000: # sample 1,000,000 x points
+    x_sample = (10*random.random() -5) # sample x point between -5 and 5 points
+    y_sample = c * (random.random()) # sample y point between 0 and 1 points
+    if y_sample <= c * math.exp((-1/2) * (x_sample**2)): # if y is less than p append to list
+        n+=1
+        x_list.append(x_sample)  # append each of these samples to list
+
+# plot histogram gaussian distribution 1,000,000 number array 10, 20, 50, 100
+plt.figure(13)
+plt.title('Gaussian Distribution 1,000,000 samples (10 bins)')
+plt.hist(x_list, 10)
+plt.xlabel('x')
+plt.ylabel('P(x)')
+plt.show()
+
+plt.figure(14)
+plt.title('Gaussian Distribution 1,000,000 samples (20 bins)')
+plt.hist(x_list, 20)
+plt.xlabel('x')
+plt.ylabel('P(x)')
+plt.show()
+
+plt.figure(15)
+plt.title('Gaussian Distribution 1,000,000 samples (50 bins)')
+plt.hist(x_list, 50)
+plt.xlabel('x')
+plt.ylabel('P(x)')
+plt.show()
+
+plt.figure(16)
+plt.title('Gaussian Distribution 1,000,000 samples (100 bins)')
 plt.hist(x_list, 100)
 plt.xlabel('x')
 plt.ylabel('P(x)')
