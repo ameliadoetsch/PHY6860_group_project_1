@@ -1,0 +1,35 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1671\cocoasubrtf200
+{\fonttbl\f0\fnil\fcharset0 Menlo-Regular;}
+{\colortbl;\red255\green255\blue255;\red109\green109\blue109;\red32\green32\blue32;\red153\green168\blue186;
+\red86\green132\blue173;\red191\green100\blue38;\red117\green114\blue185;\red88\green118\blue71;}
+{\*\expandedcolortbl;;\csgenericrgb\c42745\c42745\c42745;\csgenericrgb\c12549\c12549\c12549;\csgenericrgb\c60000\c65882\c72941;
+\csgenericrgb\c33725\c51765\c67843;\csgenericrgb\c74902\c39216\c14902;\csgenericrgb\c45882\c44706\c72549;\csgenericrgb\c34510\c46275\c27843;}
+\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf2 \cb3 # Part b\
+\
+\cf4 x_list = []\
+y_list = []\
+x_final = \cf5 1000\
+\cf4 x_initial = \cf5 0\
+\cf4 c = \cf5 1\cf4 /(\cf5 2 \cf4 * math.pi)**(\cf5 1\cf4 /\cf5 2\cf4 )\
+x_sample = (x_final * random.random())\
+\cf6 for \cf4 x \cf6 in \cf7 range\cf4 (x_final):\
+    x_sample = (x_final * random.random())\
+    x_list.append(x_sample)\
+\
+\cf6 for \cf4 y \cf6 in \cf7 range\cf4 (x_final):\
+    y_sample = (random.random())\
+    \cf6 if \cf4 y_sample <= c * math.exp((-\cf5 1\cf4 /\cf5 2\cf4 )*(x_sample**\cf5 2\cf4 )):\
+        y_list.append(y_sample)\
+    \cf6 else\cf4 :\
+         y_list.append(\cf5 0\cf4 )\
+\
+\
+plt.figure(\cf5 9\cf4 )\
+plt.title(\cf8 'Rejection Method'\cf4 )\
+plt.plot(x_list\cf6 ,\cf4 y_list)\
+plt.show()\
+\
+}
