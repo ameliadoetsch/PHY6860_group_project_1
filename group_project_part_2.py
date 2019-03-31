@@ -5,8 +5,16 @@ import numpy as np
 n = 100  # total time
 m = 10000  # number of walkers
 
-x_avg = np.arange(0, n, 1)
-x2_avg = np.arange(0, n, 1)
+def create_zero_arrays():
+    i = 0
+    array = []
+    for i in range(n):
+        array.append(0)
+    return array
+
+
+x_avg = create_zero_arrays()
+x2_avg = create_zero_arrays()
 n_arr = np.arange(0, n, 1)
 
 i = 0
