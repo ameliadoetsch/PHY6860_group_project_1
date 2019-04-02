@@ -14,42 +14,42 @@ for i in range(1000000):
 
 # plot histogram of 1000 number array with 10, 20, 50, and 100 bins
 plt.figure(1)
-plt.hist(rand_thousand, 10)
+plt.hist(rand_thousand, 10, edgecolor='white')
 plt.title("Uniform Probability Distribution, 1,000 samples in 10 bins")
 plt.show()
 
 plt.figure(2)
-plt.hist(rand_thousand, 20)
+plt.hist(rand_thousand, 20, edgecolor='white')
 plt.title("Uniform Probability Distribution, 1,000 samples in 20 bins")
 plt.show()
 
 plt.figure(3)
-plt.hist(rand_thousand, 50)
+plt.hist(rand_thousand, 50, edgecolor='white')
 plt.title("Uniform Probability Distribution, 1,000 samples in 50 bins")
 plt.show()
 
 plt.figure(4)
-plt.hist(rand_thousand, 100)
+plt.hist(rand_thousand, 100, edgecolor='white')
 plt.title("Uniform Probability Distribution, 1,000 samples in 100 bins")
 plt.show()
 
 # plot histogram of 1000000 number array with 10, 20, 50, and 100 bins
 plt.figure(5)
-plt.hist(rand_million, 10)
+plt.hist(rand_million, 10, edgecolor='white')
 plt.title("Uniform Probability Distribution, 1,000,000 samples in 10 bins")
 plt.show()
 
 plt.figure(6)
-plt.hist(rand_million, 20)
+plt.hist(rand_million, 20, edgecolor='white')
 plt.title("Uniform Probability Distribution, 1,000,000 samples in 20 bins")
 plt.show()
 
 plt.figure(7)
-plt.hist(rand_million, 50)
+plt.hist(rand_million, 50, edgecolor='white')
 plt.title("Uniform Probability Distribution, 1,000,000 samples in 50 bins")
 plt.show()
 
 plt.figure(8)
-plt.hist(rand_million, 100)
+plt.hist(rand_million, 100, edgecolor='white')
 plt.title("Uniform Probability Distribution, 1,000,000 samples in 100 bins")
 plt.show()
