@@ -5,16 +5,8 @@ import numpy as np
 n = 100  # total time
 m = 10000  # number of walkers
 
-def create_zero_arrays():
-    i = 0
-    array = []
-    for i in range(n):
-        array.append(0)
-    return array
-
-
-x_avg = create_zero_arrays()
-x2_avg = create_zero_arrays()
+x_avg = np.zeros(n)
+x2_avg = np.zeros(n)
 n_arr = np.arange(0, n, 1)
 
 i = 0
@@ -34,14 +26,21 @@ for j in range(m):
         else:
             y += -1
         # at each time step, we average over all the walkers (divide by m at this step to make code more concise)
-        #does he want us to just find avg(x2) or like the average of the total displacement squared? since it's 2D
-        #d = np.sqrt(x ** 2 + y ** 2)
-        d = x
-        x_avg[i] += d / m
-        x2_avg[i] += d ** 2 / m
+        x_avg[i] += x / m
+        x2_avg[i] += x ** 2 / m
 
 # create plot average x v. time, average x2 v. time
-plt.plot(n_arr, x_avg, label="avg x")
-plt.plot(n_arr, x2_avg, label="avg x2")
-plt.legend()
+plt.figure(1)
+plt.plot(n_arr, x_avg)
+plt.title("10${^4}$ Random Walkers on 2D Lattice")
+plt.xlabel("Time")
+plt.ylabel("<x>")
 plt.show()
+
+plt.figure(2)
+plt.plot(n_arr, x2_avg)
+plt.title("10${^4}$ Random Walkers on 2D Lattice")
+plt.xlabel("Time")
+plt.ylabel("<x${^2}$>")
+plt.show()
+
