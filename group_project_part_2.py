@@ -8,7 +8,8 @@ m = 10000  # number of walkers
 x_avg = np.zeros(n)
 x2_avg = np.zeros(n)
 n_arr = np.arange(0, n, 1)
-
+xlist = np.zeros(n)
+ylist = np.zeros(n)
 i = 0
 
 # 2D random walk
@@ -29,6 +30,25 @@ for j in range(m):
         x_avg[i] += x / m
         x2_avg[i] += x ** 2 / m
 
+
+        ## tracking x and y values for diffusion
+        xlist[i] = x
+        ylist[i] = y
+
+rlist = []
+for i in n_arr:
+    rlist.append(np.sqrt(x**2 + y**2))
+        
+
+
+
+
+
+
+
+
+
+
 # create plot average x v. time, average x2 v. time
 plt.figure(1)
 plt.plot(n_arr, x_avg)
@@ -39,6 +59,13 @@ plt.show()
 
 plt.figure(2)
 plt.plot(n_arr, x2_avg)
+plt.title("10${^4}$ Random Walkers on 2D Lattice")
+plt.xlabel("Time")
+plt.ylabel("<x${^2}$>")
+plt.show()
+
+plt.figure(3)
+plt.plot(n_arr, diff)
 plt.title("10${^4}$ Random Walkers on 2D Lattice")
 plt.xlabel("Time")
 plt.ylabel("<x${^2}$>")
