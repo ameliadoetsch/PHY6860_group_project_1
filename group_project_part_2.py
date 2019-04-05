@@ -35,18 +35,20 @@ for j in range(m):
         xlist[i] = x
         ylist[i] = y
 
+## Declare List for the radius and square difference between each position
 rlist = []
+diffsq = []
 for i in n_arr:
-    rlist.append(np.sqrt(x**2 + y**2))
-        
+    # calculate radius
+    rlist.append(np.sqrt(xlist[i]**2 + ylist[i]**2))
+    # calculate the diff between steps, square it and multiply by the probability (0.25)
+    diffsq.append(0.25 * (rlist[i]-rlist[i-1])**2)
 
+## find the mean of the square diff
+MSD = np.mean(diffsq)
 
-
-
-
-
-
-
+## Return mean square difference
+print(MSD)
 
 
 # create plot average x v. time, average x2 v. time
@@ -64,10 +66,4 @@ plt.xlabel("Time")
 plt.ylabel("<x${^2}$>")
 plt.show()
 
-plt.figure(3)
-plt.plot(n_arr, diff)
-plt.title("10${^4}$ Random Walkers on 2D Lattice")
-plt.xlabel("Time")
-plt.ylabel("<x${^2}$>")
-plt.show()
 
