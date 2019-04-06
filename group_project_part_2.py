@@ -14,7 +14,9 @@ MSDList = np.zeros(50)
 deca = np.arange(0, 50, 1)
 i = 0
 
-for l in deca:    # 2D random walk
+#Outer loop to get an average of mean square distances
+for l in deca:
+    # 2D random walk
     for j in range(m):
         x = 0
         y = 0
@@ -51,7 +53,7 @@ for l in deca:    # 2D random walk
     MSDList[l] = MSD
 
 ## Return mean square difference
-print(np.mean(MSDList))
+print("The Mean Square Distance is equal = ", np.mean(MSDList))
 
 
 # create plot average x v. time, average x2 v. time
